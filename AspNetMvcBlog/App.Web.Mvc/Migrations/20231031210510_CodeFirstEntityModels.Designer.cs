@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace App.Web.Mvc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231101105706_First")]
-    partial class First
+    [Migration("20231031210510_CodeFirstEntityModels")]
+    partial class CodeFirstEntityModels
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace App.Web.Mvc.Migrations
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("Id");
 
@@ -119,14 +119,14 @@ namespace App.Web.Mvc.Migrations
                         new
                         {
                             Id = 1,
-                            PostContext = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, enim et dapibus efficitur, augue augue blandit ex, et scelerisque orci felis ",
+                            PostContext = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, enim et dapibus efficitur, augue augue blandit ex, et scelerisque orci felis quis massa. Donec viverra risus augue, ac auctor nisl ultrices id. Aliquam luctus mauris vitae laoreet ullamcorper. Mauris suscipit nisl sapien, sed auctor arcu feugiat vel. Integer rhoncus, diam sed consectetur dignissim, elit nibh eleifend eros, et eleifend risus augue id ante. Aenean eu risus scelerisque, mollis nulla at, finibus felis. Nulla blandit ipsum eget leo eleifend lobortis. Nulla in fringilla sem. Phasellus accumsan vitae tortor non tincidunt. Sed convallis, augue sit amet aliquet tempor, eros eros fringilla libero, ultrices placerat urna augue eu nisl. Praesent suscipit viverra nulla, sed condimentum ante iaculis eget. Nam auctor faucibus metus, non gravida leo pellentesque et.",
                             PostTitle = "Lorem ipsum dolor sit amet.",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            PostContext = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate id nisi tristique ullamcorper. Vestibulum aliquam ipsum ac diam lacinia, vitae po",
+                            PostContext = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate id nisi tristique ullamcorper. Vestibulum aliquam ipsum ac diam lacinia, vitae posuere urna efficitur. Cras tempus quam ut condimentum iaculis. Donec euismod enim et tristique feugiat. Suspendisse non malesuada eros. Nulla id enim sit amet orci fringilla interdum. Etiam ultricies pharetra elit, eget vulputate odio. Fusce facilisis in lacus id lacinia. In ex lacus, convallis nec sapien non, placerat consectetur ipsum. Quisque cursus ligula id ullamcorper sagittis. Vivamus ultricies mollis augue. Nunc vel erat vitae purus vestibulum egestas.",
                             PostTitle = "Consectetur adipiscing.",
                             UserId = 2
                         });
@@ -232,20 +232,20 @@ namespace App.Web.Mvc.Migrations
                         new
                         {
                             Id = 1,
-                            UserEmail = "xsn07@gmail.com",
-                            UserName = "Hasan",
-                            UserNick = "XsN",
-                            UserPassword = "0608",
-                            UserSurname = "Ardanuç"
+                            UserEmail = "oguzkagan@xyz.com",
+                            UserName = "Oğuzkağan",
+                            UserNick = "Ogz",
+                            UserPassword = "123456",
+                            UserSurname = "Fındık"
                         },
                         new
                         {
                             Id = 2,
-                            UserEmail = "serra06@gmail.com",
-                            UserName = "Serra",
-                            UserNick = "tosbik",
-                            UserPassword = "0770",
-                            UserSurname = "Ardanuç"
+                            UserEmail = "sebnem@xyz.com",
+                            UserName = "Sebnem",
+                            UserNick = "Sebo",
+                            UserPassword = "123456",
+                            UserSurname = "Ferah"
                         });
                 });
 
