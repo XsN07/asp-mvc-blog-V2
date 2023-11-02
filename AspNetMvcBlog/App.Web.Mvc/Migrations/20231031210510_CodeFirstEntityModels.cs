@@ -7,7 +7,7 @@
 namespace App.Web.Mvc.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class CodeFirstEntityModels : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace App.Web.Mvc.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    CategoryName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -173,8 +173,8 @@ namespace App.Web.Mvc.Migrations
                 columns: new[] { "Id", "UserEmail", "UserName", "UserNick", "UserPassword", "UserSurname" },
                 values: new object[,]
                 {
-                    { 1, "xsn07@gmail.com", "Hasan", "XsN", "0608", "Ardanuç" },
-                    { 2, "serra06@gmail.com", "Serra", "tosbik", "0770", "Ardanuç" }
+                    { 1, "oguzkagan@xyz.com", "Oğuzkağan", "Ogz", "123456", "Fındık" },
+                    { 2, "sebnem@xyz.com", "Sebnem", "Sebo", "123456", "Ferah" }
                 });
 
             migrationBuilder.InsertData(
@@ -182,8 +182,8 @@ namespace App.Web.Mvc.Migrations
                 columns: new[] { "Id", "PostContext", "PostTitle", "UserId" },
                 values: new object[,]
                 {
-                    { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, enim et dapibus efficitur, augue augue blandit ex, et scelerisque orci felis ", "Lorem ipsum dolor sit amet.", 1 },
-                    { 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate id nisi tristique ullamcorper. Vestibulum aliquam ipsum ac diam lacinia, vitae po", "Consectetur adipiscing.", 2 }
+                    { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, enim et dapibus efficitur, augue augue blandit ex, et scelerisque orci felis quis massa. Donec viverra risus augue, ac auctor nisl ultrices id. Aliquam luctus mauris vitae laoreet ullamcorper. Mauris suscipit nisl sapien, sed auctor arcu feugiat vel. Integer rhoncus, diam sed consectetur dignissim, elit nibh eleifend eros, et eleifend risus augue id ante. Aenean eu risus scelerisque, mollis nulla at, finibus felis. Nulla blandit ipsum eget leo eleifend lobortis. Nulla in fringilla sem. Phasellus accumsan vitae tortor non tincidunt. Sed convallis, augue sit amet aliquet tempor, eros eros fringilla libero, ultrices placerat urna augue eu nisl. Praesent suscipit viverra nulla, sed condimentum ante iaculis eget. Nam auctor faucibus metus, non gravida leo pellentesque et.", "Lorem ipsum dolor sit amet.", 1 },
+                    { 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate id nisi tristique ullamcorper. Vestibulum aliquam ipsum ac diam lacinia, vitae posuere urna efficitur. Cras tempus quam ut condimentum iaculis. Donec euismod enim et tristique feugiat. Suspendisse non malesuada eros. Nulla id enim sit amet orci fringilla interdum. Etiam ultricies pharetra elit, eget vulputate odio. Fusce facilisis in lacus id lacinia. In ex lacus, convallis nec sapien non, placerat consectetur ipsum. Quisque cursus ligula id ullamcorper sagittis. Vivamus ultricies mollis augue. Nunc vel erat vitae purus vestibulum egestas.", "Consectetur adipiscing.", 2 }
                 });
 
             migrationBuilder.CreateIndex(
