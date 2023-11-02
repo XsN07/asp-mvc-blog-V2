@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace App.Web.Mvc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231031210510_CodeFirstEntityModels")]
-    partial class CodeFirstEntityModels
+    [Migration("20231102191535_First1")]
+    partial class First1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,16 @@ namespace App.Web.Mvc.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("PageContext")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("PageTitle")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("PostId")
                         .HasColumnType("int");
@@ -210,11 +220,6 @@ namespace App.Web.Mvc.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("UserNick")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("UserPassword")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -232,18 +237,16 @@ namespace App.Web.Mvc.Migrations
                         new
                         {
                             Id = 1,
-                            UserEmail = "oguzkagan@xyz.com",
-                            UserName = "Oğuzkağan",
-                            UserNick = "Ogz",
+                            UserEmail = "Teo@xyz.com",
+                            UserName = "Teoman",
                             UserPassword = "123456",
-                            UserSurname = "Fındık"
+                            UserSurname = "Yakupoğlu"
                         },
                         new
                         {
                             Id = 2,
                             UserEmail = "sebnem@xyz.com",
                             UserName = "Sebnem",
-                            UserNick = "Sebo",
                             UserPassword = "123456",
                             UserSurname = "Ferah"
                         });
